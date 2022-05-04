@@ -22,13 +22,15 @@
       </div>
       <div v-if="hidden == true">
         <div
-          class="card mt-3 bg-warning text-white"
+          class="card mt-3 bg-info text-white"
           v-for="(item, index) in post"
           :key="index"
         >
           <div class="card-body">
-            <h5 class="card-title">{{ item.nama }}</h5>
-            <p class="card-text">{{ item.harga }}</p>
+            <h5 class="card-title">Nama: {{ item.nama }}</h5>
+            <p class="card-text">Nis : {{ item.nis }}</p>
+            <p class="card-text">Kelas :{{ item.kelas }}</p>
+            <h2 class="card-text text-primary">Status : {{ item.ket }}</h2>
           </div>
         </div>
       </div>
@@ -41,26 +43,20 @@
 
 <script setup>
 import { reactive, ref } from "@vue/reactivity";
+import db from "../db";
 
 const cari = ref("");
 const hidden = ref(false);
 const show = ref(false);
 const post = ref([]);
 const time = ref(Date().toLocaleLowerCase());
-const data = reactive({
-  buah: [
-    { id: 1, nama: "Apel", harga: 10000 },
-    { id: 2, nama: "Jeruk", harga: 20000 },
-    { id: 3, nama: "Mangga", harga: 30000 },
-    { id: 4, nama: "Pisang", harga: 40000 },
-    { id: 5, nama: "Semangka", harga: 50000 },
-  ],
-});
+const data = reactive(db);
 const carilah = () => {
   hidden.value = true;
-  post.value = data.buah.filter((item) => {
-    if (item.nama.toLowerCase() === cari.value.toLowerCase()) {
-      return item.nama.toLowerCase().includes(cari.value.toLowerCase());
+  data.filter((item) => {
+    if (item.nis == cari.value) {
+      post.value.push(item);
+      show.value = false;
     }
   });
   if (post.value.length == 0) {
@@ -70,6 +66,7 @@ const carilah = () => {
 const focus = () => {
   hidden.value = false;
   show.value = false;
+  post.value = [];
 };
 </script>
 
