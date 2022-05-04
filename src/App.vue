@@ -36,7 +36,7 @@ import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
 import Surat from "./components/Surat.vue";
 
-const countDownDate = ref(new Date("May 4, 2022 21:35:25").getTime());
+const countDownDate = ref(new Date("May 5, 2022 16:00:25").getTime());
 const now = ref(new Date().getTime());
 let jarak = ref(countDownDate.value - now.value);
 const day = ref(Math.floor(jarak.value / (1000 * 60 * 60 * 24)));
