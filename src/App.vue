@@ -2,6 +2,9 @@
   <div>
     <Navbar />
     <Header />
+    <span class="mt-5">
+      <Surat />
+    </span>
     <div>
       <span v-if="day >= 0 && hour >= 0 && minute >= 0 && second >= 0">
         <Waktu :day="day" :hour="hour" :minute="minute" :second="second" />
@@ -31,8 +34,9 @@ import Cari from "./components/Cari.vue";
 
 import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
+import Surat from "./components/Surat.vue";
 
-const countDownDate = ref(new Date("May 4, 2022 16:35:25").getTime());
+const countDownDate = ref(new Date("May 4, 2022 21:35:25").getTime());
 const now = ref(new Date().getTime());
 let jarak = ref(countDownDate.value - now.value);
 const day = ref(Math.floor(jarak.value / (1000 * 60 * 60 * 24)));

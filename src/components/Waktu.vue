@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center" id="pengumuman">
     <div class="col-md-6">
       <table
         class="table table-bordered mt-5 text-center rounded-4 shadow"

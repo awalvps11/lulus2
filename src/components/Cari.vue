@@ -1,5 +1,5 @@
 <template>
-  <div class="row justify-content-center">
+  <div class="row justify-content-center bg-light mt-5" id="pengumuman">
     <div class="col-md-8">
       <div class="input-group mb-3 mt-5">
         <input
@@ -73,4 +73,4 @@ const focus = () => {
 };
 </script>
 
-<style></style>
+<style scoop></style>

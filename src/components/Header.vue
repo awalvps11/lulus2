@@ -13,7 +13,7 @@
         alt="..."
         width="120"
       />
-      <h1 class="text-white fs-3 fw-bolder">SMAN 9 Luwu Utara</h1>
+      <h1 class="text-warning fs-3 fw-bolder">SMAN 9 Luwu Utara</h1>
       <h3 class="text-primary mb-0 fw-bold">Pengumuman Kelulusan</h3>
     </div>
   </header>
