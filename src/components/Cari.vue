@@ -44,7 +44,7 @@
 
 <script setup>
 import { reactive, ref } from "@vue/reactivity";
-import db from "../dba.js";
+import db from "../data.js";
 
 const cari = ref("");
 const hidden = ref(false);
@@ -58,6 +58,7 @@ const carilah = () => {
     if (item.nis == cari.value) {
       post.value.push(item);
       show.value = false;
+      console.log(data);
     }
   });
   if (post.value.length == 0) {
