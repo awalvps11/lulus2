@@ -29,8 +29,9 @@
           <div class="card-body">
             <h5 class="card-title">Nama: {{ item.nama }}</h5>
             <p class="card-text">Nis : {{ item.nis }}</p>
-            <p class="card-text">Kelas :{{ item.kelas }}</p>
-            <h2 class="card-text text-primary">Status : {{ item.ket }}</h2>
+            <!-- <p class="card-text">Kelas :{{ item.kelas }}</p> -->
+            <h2 class="card-text text-primary">Status : Lulus</h2>
+            <a :href="item.link" class="btn btn-danger">Download SKL</a>
           </div>
         </div>
       </div>
@@ -43,7 +44,7 @@
 
 <script setup>
 import { reactive, ref } from "@vue/reactivity";
-import db from "../db";
+import db from "../dba.js";
 
 const cari = ref("");
 const hidden = ref(false);
