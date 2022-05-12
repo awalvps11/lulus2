@@ -58,7 +58,6 @@ const carilah = () => {
     if (item.nis == cari.value) {
       post.value.push(item);
       show.value = false;
-      console.log(data);
     }
   });
   if (post.value.length == 0) {
